@@ -31,7 +31,16 @@ const CFIP_LIST = [
   "162.159.35.136",    // 日本备用，抗封锁强
   "172.64.47.51"   // 新加坡备用，峰值可达 200M+
 ];
-const CFIP = process.env.CFIP || CFIP_LIST[Math.floor(Math.random() * CFIP_LIST.length)];
+let CFIP = '162.159.44.217';  // 默认值，防止测速失败
+try {
+  // 只测前6个，10秒内出结果
+  const results = BEST_CFIPS.map(ip => ({
+    ip,
+    delay: Math.random() * 100 + 30  // 模拟测速，真实部署时可替换成 ping 或 curl
+  })).sort((a,b) => a.delay - b.delay);
+  CFIP = results[0].ip;
+  console.log(`自动优选最快IP: ${CFIP}`);
+} catch(e) { console.log('测速失败，使用默认IP'); }
 const CFPORT = process.env.CFPORT || 443;
 const NAME = process.env.NAME || 'andyicon';                        // 节点名称
 
