@@ -18,7 +18,7 @@ const NEZHA_SERVER = process.env.NEZHA_SERVER || '';        // 哪吒v1填写形
 const NEZHA_PORT = process.env.NEZHA_PORT || '';            // 使用哪吒v1请留空，哪吒v0需填写
 const NEZHA_KEY = process.env.NEZHA_KEY || '';              // 哪吒v1的NZ_CLIENT_SECRET或哪吒v0的agent密钥
 const ARGO_DOMAIN = process.env.ARGO_DOMAIN || 'node2.iconandy.dpdns.org';          // 固定隧道域名,留空即启用临时隧道
-const ARGO_AUTH = process.env.ARGO_AUTH || 'eyJhIjoiOWUxZjRhNjM5MmI1NzUxMjY2ZGMwMDBmMGY2OWU2MzAiLCJ0IjoiMGMyZmRlOWItMmI0OS00YzU5LWExNTItOWM5NzM0YTAzOTdmIiwicyI6IlpqZzBNMk5tTXpjdE1tRXlZUzAwTnpGaUxXSmlOVE10WWpFM1ptVmtOamt4TWpBeSJ9
+const ARGO_AUTH = process.env.ARGO_AUTH || 'eyJhIjoiOWUxZjRhNjM5MmI1NzUxMjY2ZGMwMDBmMGY2OWU2MzAiLCJ0IjoiMGMyZmRlOWItMmI0OS00YzU5LWExNTItOWM5NzM0YTAzOTdmIiwicyI6IlpqZzBNMk5tTXpjdE1tRXlZUzAwTnpGaUxXSmlOVE10WWpFM1ptVmtOamt4TWpBeSJ9'
 ';              // 固定隧道密钥json或token,留空即启用临时隧道,json获取地址：https://json.zone.id
 const ARGO_PORT = process.env.ARGO_PORT || 8001;            // 固定隧道端口,使用token需在cloudflare后台设置和这里一致
 const CFIP_LIST = [
