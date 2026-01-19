@@ -1,15 +1,13 @@
-FROM node:alpine3.20
+FROM oven/bun:latest
 
-WORKDIR /tmp
+RUN apt-get update && apt-get install -y curl openssl && apt-get clean
 
+WORKDIR /app
 COPY . .
 
-EXPOSE 3000/tcp
+RUN chmod +x index.js
 
-RUN apk update && apk upgrade &&\
-    apk add --no-cache openssl curl gcompat iproute2 coreutils &&\
-    apk add --no-cache bash &&\
-    chmod +x index.js &&\
-    npm install
+ENV PORT=10280
 
-CMD ["node", "index.js"]
+CMD ["bun", "index.js"]
+
